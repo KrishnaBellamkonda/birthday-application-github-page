@@ -1,0 +1,368 @@
+/*Gentle Reset*/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*Constants*/
+html, body {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*Styles*/
+:root {
+  --bg-color:rgba(24, 24, 24, 0.925);
+  --bg-surface-color:rgba(77, 77, 77, 0.945);
+  --font-color:rgb(231, 231, 231);
+  --accent-color:rgb(235, 80, 106);
+  --clipboard-font-color: white;
+}
+
+/*Spacing*/
+:root {
+  --spacing-xl:3rem;
+  --spacing-l:2rem;
+  --spacing-m:1.5rem;
+  --spacing-s:1rem;
+  --spacing-xs:0.5rem;
+}
+
+/*Typography*/
+h1 {
+  font-size: 1.5rem;
+  line-height: 0.85em;
+}
+
+h2 {
+  font-size: 3.0rem;
+  line-height: 0.9em;
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.2em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.6em;
+}
+
+p, a, label {
+  font-size: 1rem;
+  line-height: 1.6em;
+}
+
+/*Utility*/
+.buttons {
+  width: clamp(300px, 50%, 800px);
+  height: clamp(150px, 25%, 400px);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(140px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  place-content: center;
+}
+
+.buttons input {
+  height: clamp(15px, 100%, 50px);
+  width: clamp(30px, 100%, 100px);
+  background-color: var(--accent-color);
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  outline: none;
+}
+
+.container {
+  max-width: clamp(300px, 90%, 1200px);
+  margin: 0 auto;
+}
+
+.bg-surface-color {
+  color: var(--font-color);
+}
+
+.right {
+  --bg-surface-color: green;
+}
+
+.wrong {
+  --bg-surface-color: rgb(224, 48, 48);
+}
+
+/*Sections*/
+.App {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.quiz-section-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
+}
+
+.quiz-element {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
+  border-radius: var(--spacing-s);
+  background-color: var(--bg-surface-color);
+}
+
+.quiz-element label {
+  text-align: center;
+}
+
+.quiz-section {
+  display: -ms-grid;
+  display: grid;
+  padding-bottom: var(--spacing-l);
+}
+
+.quiz-section .score-card {
+  width: clamp(250px, 50%, 600px);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+  margin-top: var(--spacing-m);
+  margin-left: 0;
+}
+
+.buttons {
+  place-self: center;
+  gap: var(--spacing-s);
+}
+
+.section-module {
+  margin-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
+}
+
+.score-card-visible {
+  display: block;
+}
+
+.nav-box {
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-box .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-box .nav-links li {
+  list-style: none;
+  padding-left: var(--spacing-m);
+  padding-right: var(--spacing-m);
+  color: var(--accent-color);
+}
+
+.nav-box .nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Interaction*/
+input[type=button]:hover {
+  background-color: white;
+  color: var(--accent-color);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+input[type=button]:focus {
+  background-color: white;
+  color: var(--accent-color);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+li:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+/*Dark and light mode*/
+.light-mode {
+  --bg-color:rgba(224, 224, 224, 0.925);
+  --bg-surface-color:rgba(255, 255, 255, 0.945);
+  --font-color:rgb(44, 44, 44);
+  --accent-color:rgb(235, 80, 106);
+}
+
+.mode-button {
+  cursor: pointer;
+}
+
+svg {
+  fill: var(--accent-color);
+  width: 35px;
+  height: 35px;
+}
+
+.birthday-reminder h3 {
+  padding-bottom: var(--spacing-m);
+}
+
+.birthday-reminder section {
+  padding-top: var(--spacing-l);
+}
+
+.birthday-reminder strong {
+  padding-top: var(--spacing-m);
+}
+
+.upcoming-birthdays-h4 {
+  padding-bottom: var(--spacing-l);
+}
+
+/*Table*/
+.table {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-m);
+}
+
+.birthday-reminder-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: var(--bg-surface-color);
+  border-radius: var(--spacing-xs);
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  padding-right: var(--spacing-xs);
+  padding-left: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.birthday-reminder-element:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.element-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.element-header p {
+  color: var(--accent-color);
+}
+
+.clipboard {
+  background-color: var(--accent-color);
+  color: var(--clipboard-font-color);
+}
+
+.clipboard p {
+  color: var(--clipboard-font-color);
+}
+
+.reminder-input {
+  outline: none;
+  border: none;
+  width: clamp(300px, 50%, 600px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: var(--spacing-xl);
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  border-radius: var(--spacing-xs);
+  background-color: var(--bg-surface-color);
+  color: var(--font-color);
+}
+
+.reminder-input input {
+  outline: none;
+  height: 75%;
+}
+
+.reminder-input label {
+  font-size: 1.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.reminder-input input {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=quizSection.css.map */

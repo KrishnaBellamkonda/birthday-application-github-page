@@ -1,0 +1,385 @@
+/*Gentle Reset*/
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+
+
+/*Constants*/
+html, body {
+   font-size:16px;
+   font-family: 'Poppins', sans-serif;
+}
+
+
+/*Styles*/
+:root {
+   --bg-color:rgba(24, 24, 24, 0.925);
+   --bg-surface-color:rgba(77, 77, 77, 0.945);
+   --font-color:rgb(231, 231, 231);
+   --accent-color:rgb(235, 80, 106);
+   --clipboard-font-color: white;
+}
+
+/*Spacing*/
+:root{
+   --spacing-xl:3rem;
+   --spacing-l:2rem;
+   --spacing-m:1.5rem;
+   --spacing-s:1rem;
+   --spacing-xs:0.5rem;
+}
+
+/*Typography*/
+h1 {
+   font-size: 1.5rem;
+   line-height: 0.85em;
+}
+
+h2 {
+   font-size: 3.0rem;
+   line-height: 0.9em;
+}
+
+h3 {
+   font-size: 1.75rem;
+   line-height: 1.2em;
+}
+
+h4 {
+   font-size: 1.25rem;
+   line-height: 1.6em;
+}
+
+p, a, label {
+   font-size: 1rem;
+   line-height: 1.6em;
+}
+
+
+
+/*Utility*/
+.buttons {
+
+   width: clamp(300px, 50%, 800px);
+   height: clamp(150px,25%, 400px);
+   position: relative;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+   // gap: var(--spacing-s);
+
+
+   place-content: center;
+   // place-items: center;
+   // justify-items:space-between;
+   // background-color: blue;
+
+   input {   
+      height: clamp(15px, 100%, 50px);
+      width: clamp(30px, 100%, 100px);
+
+      background-color: var(--accent-color);
+      border: 0;
+      border-radius: 5px;
+      color: white;
+
+      // padding:var(--spacing-s) var(--spacing-m);
+
+      padding-top: var(--spacing-s);
+      padding-bottom: var(--spacing-s);
+      // padding-inline:var(--spacing-l);
+
+      outline: none;
+   }
+
+
+
+}
+
+.container{
+   max-width: clamp(300px, 90%, 1200px);
+   margin: 0 auto;
+}
+
+.bg-surface-color {
+   color: var(--font-color);
+}
+
+.right {
+   --bg-surface-color: green;
+}
+
+.wrong {
+   --bg-surface-color: rgb(224, 48, 48);
+}
+/*Sections*/
+
+.App {
+   background-color: var(--bg-color);
+   color:var(--font-color)
+}
+
+.quiz-section-form {
+   // background-color: var(--bg-surface-color);
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: var(--spacing-m);
+
+   // Margin 
+   margin-top: var(--spacing-l);
+   padding-bottom: var(--spacing-l);
+   
+}
+
+.quiz-element {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+
+   align-items: center;
+
+   padding-top: var(--spacing-s);
+   padding-bottom: var(--spacing-s);
+   padding-left: var(--spacing-s);
+   padding-right: var(--spacing-s);
+
+   border-radius: var(--spacing-s);
+
+   background-color: var(--bg-surface-color);
+   
+   label {
+      text-align: center;
+   }
+}
+
+.quiz-section {
+   display: grid;
+
+   .score-card {
+      
+      // background-color: var(--bg-surface-color);
+      // display: grid;
+      // place-items: center;
+      // display: none;
+      // border-radius: var(--spacing-s);
+      width: clamp(250px, 50%, 600px);
+
+      padding-top: var(--spacing-m);
+      padding-bottom: var(--spacing-m);
+
+      // padding-left: var(--spacing-l);
+      // padding-right: var(--spacing-l);
+
+      margin-top: var(--spacing-m);
+      margin-left: 0;
+   }
+
+   // h2 {
+   //    margin-bottom: var(--spacing-s);
+   //    display: inline-flex;
+   //    justify-content: center;
+   // }
+
+
+   padding-bottom: var(--spacing-l);
+}
+
+.buttons {
+   place-self: center;
+   gap: var(--spacing-s);
+}
+
+.section-module {
+   margin-top: var(--spacing-l);
+   padding-bottom: var(--spacing-l);
+}
+
+.score-card-visible{
+   display: block;
+}
+
+.nav-box{
+   padding-top: var(--spacing-m);
+   padding-bottom: var(--spacing-m);
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .nav-links {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+         list-style: none;
+         padding-left: var(--spacing-m);
+         padding-right: var(--spacing-m);
+         color: var(--accent-color);
+      }
+
+      a {
+         text-decoration: none;
+         color: inherit;
+      }
+   }
+}
+
+/*Interaction*/
+input[type=button]:hover {
+   background-color: white;
+   color:var(--accent-color);
+   
+   transition: all 0.3s ease;
+
+}
+
+input[type=button]:focus {
+   background-color: white;
+   color:var(--accent-color);
+   
+   transform: scale(1.1);
+   transition: all 0.3s ease-in-out;
+
+}
+
+li:hover {
+   transform: scale(1.1);
+   transition: transform 0.3s ease-in-out;
+}
+
+li:focus {
+   transform: scale(1.1);
+   transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+/*Dark and light mode*/
+.light-mode {
+   --bg-color:rgba(224, 224, 224, 0.925);
+   --bg-surface-color:rgba(255, 255, 255, 0.945);
+   --font-color:rgb(44, 44, 44);
+   --accent-color:rgb(235, 80, 106);
+}
+
+.mode-button {
+   cursor: pointer;
+}
+
+svg {
+   fill: var(--accent-color);
+   width: 35px;
+   height: 35px;
+}
+
+.birthday-reminder {
+   h3 {
+      padding-bottom: var(--spacing-m);
+   }
+   section {
+      padding-top: var(--spacing-l);
+      
+   }
+   strong {
+      padding-top: var(--spacing-m);
+   }
+   
+}
+
+.upcoming-birthdays-h4 {
+   padding-bottom: var(--spacing-l);
+}
+/*Table*/
+
+.table {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: var(--spacing-m);
+}
+
+.birthday-reminder-element {
+   display: flex;
+   // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+   align-items: center;
+   justify-content: space-around;
+
+
+   background-color: var(--bg-surface-color);
+   border-radius: var(--spacing-xs);
+
+   padding-top: var(--spacing-s);
+   padding-bottom: var(--spacing-s);
+   padding-right: var(--spacing-xs);
+   padding-left: var(--spacing-xs);
+
+   cursor: pointer;
+   
+
+}
+
+.birthday-reminder-element:hover{
+   transform: scale(1.05);
+   transition: transform 0.3s ease-in-out;
+}
+
+.element-header {
+   display: flex;
+   flex-direction: column;
+
+   p {
+      color: var(--accent-color);
+      
+   }
+}
+
+.clipboard {
+   background-color: var(--accent-color);
+   color: var(--clipboard-font-color);
+
+   p {
+      color: var(--clipboard-font-color);
+   }
+}
+
+// .clipboard-button {
+
+.reminder-input {
+   outline: none;
+   border: none;
+   width: clamp(300px, 50%, 600px);
+
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+   align-items: center;
+
+   margin-top: var(--spacing-xl);
+   padding-left: var(--spacing-s);
+   padding-right: var(--spacing-s);
+   padding-top: var(--spacing-s);
+   padding-bottom: var(--spacing-s);
+
+   border-radius: var(--spacing-xs);
+
+   background-color: var(--bg-surface-color);
+   color: var(--font-color);
+
+   input {
+      outline: none;
+      height: 75%;
+      
+   }
+   
+
+   label {
+      font-size: 1.5em;
+      align-self: center;
+   }
+
+   input {
+      align-self: center;
+   }
+   
+}
